@@ -6,13 +6,14 @@
 
 def which_triangle(a, b, c):
     # Здесь нужно написать код
-    if a == b == c != 0:
+    if a == b == c:
         type_triangle = 'Равносторонний'
-    elif a == b != 0 or a == c != 0 or b == c != 0:
+    elif (a == b or a == c or b == c) and a + b > c and a + c > b and b + c > a:
         type_triangle = 'Равнобедренный'
     elif a != b and a != c and b != c and a + b > c and a + c > b and b + c > a:
         type_triangle = 'Обычный'
-    elif a + b <= c or a + c <= b or b + c <= a:
+    else:
+        a + b <= c or a + c <= b or b + c <= a
         type_triangle = 'Не треугольник'
     return type_triangle
 
